@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 98vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap:  nowrap;
+    background: linear-gradient(65deg,#32a8bd,#dcd3bf,#77D4CA);
+    font-family: sans-serif;
+    
+}
+.deleteButton{
+    position: fixed;
+    border: none;
+    width: 100px;
+    top: 25px;
+    right:20px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #c3dddc;
+    box-shadow: 10px 10px 5px #5db39180;
+    scale: 0;
+    z-index: 2;
+}
+.postsSection{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+.comment-title{
+    width: max-content;
+    color: #1f3f7f;
+    cursor: pointer;
+}
+.front-icon{
+    width: max-content;
+    color: #1f3f7f;
+    cursor: pointer;
+}
+.postCards{
+    position: relative;
+    width: 500px;
+    height:400px;
+    overflow: hidden;
+    margin: 30px;
+    background: linear-gradient(135deg,#3E68BD,#47A4CC,#77D4CA,#E3D9C3,#DECDB4,#CFB99B );
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #5db39180;
+}
+.email{
+    position: absolute;
+    right: -20%;
+}
+.Main-Title{
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    flex-basis: 30%; 
+    margin-top: 30px;
+    overflow: scroll;
+    color: #312323;
+}
+.Main-Title::-webkit-scrollbar{
+    display: none;
+}
+.bodytext{
+    display: flex;
+    margin-top: 20px;
+    flex-basis: 40%;
+    color: #1f3f7f;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.sourceText{
+    position: absolute;
+    font-size: large;
+    right: -5%;
+    color: #1f3f7f;
+    cursor: pointer;
+}
+.sourceText::after{
+    content: "edit";
+    position: absolute;
+    z-index: 2;
+    font-size: x-small;
+    color: black;
+    background-color: #eaeef4;
+    padding: 10px;
+    top: 0%;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(100% - 2px));
+    scale: 0;
+}
+.sourceText::before{
+    content:  " ";
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    border: 10px solid transparent;
+    border-bottom-color: #eaeef4;
+    scale: 0;
+}
+.sourceText:hover::before,.sourceText:hover::after {
+    scale: 1;
+}
+.bin::after{
+    content: "delete";
+    position: absolute;
+    z-index: 2;
+    font-size: x-small;
+    color: black;
+    background-color: #eaeef4;
+    padding: 10px;
+    top: 0%;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(100% - 2px));
+    scale: 0;
+}
+.bin::before{
+    content:  " ";
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    border: 10px solid transparent;
+    border-bottom-color: #eaeef4;
+    scale: 0;
+}
+.bin:hover::before,.bin:hover::after {
+    scale: 1;
+}
+.comments-div{
+    margin-top: 10px;
+    width: 100%;
+    height: 25%;
+    font-size:small;
+}
+.body-2{
+    overflow: scroll;
+}
+.body-2::-webkit-scrollbar{
+    display: none;
+}
+.bin{
+    position: absolute;
+    font-size: large;
+    right: -15%;
+    color: #1f3f7f;
+    cursor: pointer;
+}
+.checkbox{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    cursor: pointer;
+}
+.postCard{
+    padding: 20px;
+    position: absolute;
+    left: 70px;
+    width: 350px;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+.back-icon{
+    color: #1f3f7f;
+    width: max-content;
+    position: absolute;
+    bottom: 10%;
+    right: -10%;
+    cursor: pointer;
+}
+.back-icon::after{
+    content: "comments";
+    position: absolute;
+    z-index: 2;
+    font-size: x-small;
+    color: black;
+    background-color: #eaeef4;
+    padding: 10px;
+    top: 0%;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(-100% - 10px));
+    scale: 0;
+}
+.back-icon::before{
+    content:  " ";
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-55%);
+    border: 10px solid transparent;
+    border-top-color: #eaeef4;
+    scale: 0;
+}
+.back-icon:hover::before,.back-icon:hover::after {
+    scale: 1;
+}
+#frontside,#backside{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.front-icon::after{
+    content: "back";
+    position: absolute;
+    z-index: 2;
+    font-size: x-small;
+    color: black;
+    background-color: #eaeef4;
+    padding: 10px;
+    top: 50%;
+    border-radius: 10px;
+    left: calc(100% + 5px);
+    transform: translateY(-50% );
+    scale: 0;
+}
+.front-icon::before{
+    content:  " ";
+    position: absolute;
+    top:50%;
+    left: 100% ;
+    transform: translateX(-50%) translateY(-50%);
+    border: 10px solid transparent;
+    border-right-color: #eaeef4;
+    scale: 0;
+}
+.front-icon:hover::before,.front-icon:hover::after {
+    scale: 1;
+}
+#frontside{
+    display: flex;
+    flex-direction: column;
+    left: 0;
+}
+#backside{
+    position: absolute;
+    top: 5%;
+    transform: rotateY(180deg);
+}
+.save{
+    position: absolute;
+    font-size: large;
+    right: -5%;
+    color: #1f3f7f;
+    cursor: pointer;
+    scale: 0;
+}
+.save::after{
+    content: "save";
+    position: absolute;
+    z-index: 2;
+    font-size: x-small;
+    color: black;
+    background-color: #eaeef4;
+    padding: 10px;
+    top: 0%;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc(100% - 2px));
+    scale: 0;
+}
+.save::before{
+    content:  " ";
+    position: absolute;
+    top:0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    border: 10px solid transparent;
+    border-bottom-color: #eaeef4;
+    scale: 0;
+}
+.save:hover::before,.save:hover::after {
+    scale: 1;
+}
